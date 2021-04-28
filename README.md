@@ -10,5 +10,5 @@
 ## Installation
 
 ```sh
-go get -u -v github.com/kralamoure/dofus
+> go get -u -v github.com/kralamoure/dofus
 ```

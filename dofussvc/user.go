@@ -15,25 +15,25 @@ func (svc Service) CreateUser(ctx context.Context, user dofus.User) (id string, 
 		return
 	}
 
-	return svc.repo.CreateUser(ctx, user)
+	return svc.storer.CreateUser(ctx, user)
 }
 
 func (svc Service) Users(ctx context.Context) (users map[string]dofus.User, err error) {
-	return svc.repo.Users(ctx)
+	return svc.storer.Users(ctx)
 }
 
 func (svc Service) User(ctx context.Context, id string) (user dofus.User, err error) {
-	return svc.repo.User(ctx, id)
+	return svc.storer.User(ctx, id)
 }
 
 func (svc Service) UserByNickname(ctx context.Context, nickname string) (user dofus.User, err error) {
-	return svc.repo.UserByNickname(ctx, nickname)
+	return svc.storer.UserByNickname(ctx, nickname)
 }
 
 func (svc Service) UserAddChatChannel(ctx context.Context, id string, chatChannels ...dofustyp.ChatChannel) error {
-	return svc.repo.UserAddChatChannels(ctx, id, chatChannels...)
+	return svc.storer.UserAddChatChannels(ctx, id, chatChannels...)
 }
 
 func (svc Service) UserRemoveChatChannel(ctx context.Context, id string, chatChannels ...dofustyp.ChatChannel) error {
-	return svc.repo.UserRemoveChatChannels(ctx, id, chatChannels...)
+	return svc.storer.UserRemoveChatChannels(ctx, id, chatChannels...)
 }

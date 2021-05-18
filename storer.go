@@ -17,7 +17,7 @@ var (
 	ErrAccountNameAlreadyExists  = errors.New("account name already exists")
 )
 
-type Repo interface {
+type Storer interface {
 	CreateUser(ctx context.Context, user User) (id string, err error)
 	Users(ctx context.Context) (users map[string]User, err error)
 	User(ctx context.Context, id string) (user User, err error)

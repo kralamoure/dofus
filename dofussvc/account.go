@@ -15,25 +15,25 @@ func (svc Service) CreateAccount(ctx context.Context, account dofus.Account) (id
 		return
 	}
 
-	return svc.repo.CreateAccount(ctx, account)
+	return svc.storer.CreateAccount(ctx, account)
 }
 
 func (svc Service) Accounts(ctx context.Context) (accounts map[string]dofus.Account, err error) {
-	return svc.repo.Accounts(ctx)
+	return svc.storer.Accounts(ctx)
 }
 
 func (svc Service) AccountsByUserId(ctx context.Context, userId string) (accounts map[string]dofus.Account, err error) {
-	return svc.repo.AccountsByUserId(ctx, userId)
+	return svc.storer.AccountsByUserId(ctx, userId)
 }
 
 func (svc Service) Account(ctx context.Context, id string) (account dofus.Account, err error) {
-	return svc.repo.Account(ctx, id)
+	return svc.storer.Account(ctx, id)
 }
 
 func (svc Service) AccountByName(ctx context.Context, name string) (account dofus.Account, err error) {
-	return svc.repo.AccountByName(ctx, name)
+	return svc.storer.AccountByName(ctx, name)
 }
 
 func (svc Service) SetAccountLastAccessAndLastIP(ctx context.Context, id string, lastAccess time.Time, lastIP string) error {
-	return svc.repo.SetAccountLastAccessAndLastIP(ctx, id, lastAccess, lastIP)
+	return svc.storer.SetAccountLastAccessAndLastIP(ctx, id, lastAccess, lastIP)
 }

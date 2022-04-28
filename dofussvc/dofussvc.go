@@ -7,16 +7,16 @@ import (
 )
 
 type Service struct {
-	storer dofus.Storer
+	store dofus.Store
 }
 
-func NewService(storer dofus.Storer) (*Service, error) {
-	if storer == nil {
-		return nil, errors.New("nil storer")
+func NewService(store dofus.Store) (*Service, error) {
+	if store == nil {
+		return nil, errors.New("nil store")
 	}
 
 	svc := &Service{
-		storer: storer,
+		store: store,
 	}
 
 	return svc, nil
